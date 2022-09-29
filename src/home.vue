@@ -55,7 +55,7 @@
     </Section>
 
     <!-- vision//done -->
-    <Section data-aos="fade-top" title="Vision">
+    <Section title="Vision">
       <div data-aos="fade-right" class="w-full flex lg:flex-row flex-col items-center justify-evenly">
         <div class="lg:w-1/2 w-full lg:px-14 px-8 flex flex-col items-center justify-evenly">
           <div class="text-lg text-gray-700 bg-white rounded-md p-10 w-full">
@@ -68,26 +68,20 @@
       </div>
     </Section>
 
-    <!-- statistics
+    <!-- statistics -->
     <Section title="Statistics">
-      <div class="flex flex-wrap items-center justify-evenly">
-        <div class="m-2 w-32 h-32 bg-primary-900 rounded-lg shadow-lg flex flex-col items-center justify-center">
-          <img src="/Icons/bank.svg" class="w-12 h-12 " alt="" />
-          <p class="text-secondaryOrange-900 text-lg py-1 font-semibold capitalize ">title</p>
-          <p class="text-white text-sm ">123</p>
-        </div>
-        <div class="m-2 w-32 h-32 bg-primary-900 rounded-lg shadow-lg flex flex-col items-center justify-center">
-          <img src="/Icons/bank.svg" class="w-12 h-12 " alt="" />
-          <p class="text-secondaryOrange-900 text-lg py-1 font-semibold capitalize ">title</p>
-          <p class="text-white text-sm ">123</p>
-        </div>
-        <div class="m-2 w-32 h-32 bg-primary-900 rounded-lg shadow-lg flex flex-col items-center justify-center">
-          <img src="/Icons/bank.svg" class="w-12 h-12 " alt="" />
-          <p class="text-secondaryOrange-900 text-lg py-1 font-semibold capitalize ">title</p>
-          <p class="text-white text-sm ">123</p>
+      <div data-aos="fade-up" data-aos-duration="1500" class="flex flex-wrap items-center justify-evenly">
+        <div data-aos="fade-up" data-aos-duration="2000" v-for="(statistic,i) in statistics" :key="i"
+          class="m-2 w-60 h-40 bg-primary-900 rounded-lg shadow-lg p-4 flex-col flex items-center justify-between">
+          <h1 class="w-full text-center text-2xl pb-1 font-semibold text-secondaryOrange-900" v-html="statistic.city">
+          </h1>
+          <div class="h-32 w-full flex flex-col">
+            <p class="text-gray-300 text-sm font-semibold py-1  capitalize " v-html="statistic.title"></p>
+            <p class="text-gray-400 text-sm text-start my-1 " v-html="statistic.desc"></p>
+          </div>
         </div>
       </div>
-    </Section> -->
+    </Section>
 
     <!-- values //done -->
     <Section title="Values">
@@ -125,7 +119,7 @@
       </div>
     </Section>
 
-    <!-- our partner // need for icons and urls -->
+    <!-- our partner // done -->
     <Section title="Our Partner" id="our-partner">
       <div class="w-full flex flex-col lg:flex-row items-center justify-center">
         <img data-aos="fade-right" data-aos-duration="3000" src="/Illustration/partner.svg" class="lg:w-1/2 w-full"
@@ -134,8 +128,8 @@
           <a data-aos="fade-left" data-aos-duration="3000" target="_blank" :href="partner.url"
             v-for="(partner,i) in partners" :key="i"
             class="hover:shadow-lg h-28 my-2 overflow-hidden border hover:border-none bg-white rounded-md w-full grid grid-cols-6 gap-2">
-            <div class=" col-span-2 flex h-full rounded-l-lg bg-gray-300">
-              <!-- <img class="m-auto h-10 w-10" :src="partner.icon" alt="" /> -->
+            <div class=" col-span-2 flex h-full rounded-l-lg">
+              <img class="m-auto h-full object-contain" :src="partner.icon" alt="" />
             </div>
             <div class=" col-span-4 flex items-center justify-center w-full">
               <h1 class="w-full font-semibold text-goalTile py-1 px-1 text-xl uppercase" v-text="partner.title">
@@ -146,7 +140,7 @@
       </div>
     </Section>
 
-    <!-- services //done without icons -->
+    <!-- services //done -->
     <Section title="Services" id="services">
       <div class="w-full flex flex-col lg:flex-row items-center justify-center">
         <div data-aos="fade-right" class="lg:w-1/2 w-full lg:px-14 px-8 flex flex-col items-center justify-evenly">
@@ -227,14 +221,14 @@
       </div>
     </Section>
 
-    <!-- hr department //done without icons -->
+    <!-- hr department //done  -->
     <Section title="hr Department">
       <div class="w-full mt-4 flex lg:flex-row flex-col items-center justify-evenly">
         <hr-card v-for="(item ,i) in hrCardsData" :hrData="item" :key="i" />
       </div>
     </Section>
 
-    <!-- contact us // need for back-end -->
+    <!-- contact us // done -->
     <Section title="Contact Us" id="contact-us">
       <div
         class="w-full flex flex-col-reverse lg:flex-row items-center justify-evenly lg:justify-evenly lg:px-32 px-10 lg:h-[80vh]">
@@ -318,6 +312,33 @@ export default defineComponent({
   },
   data() {
     return {
+      statistics: [
+        {
+          city: 'Sana\'a city',
+          title: '- <span class="text-xl">14</span> Medical Reps - Med.<br/>   Marketing & Promotion',
+          desc: '- <span  class="text-xl">8</span> Sales & Distribution'
+        },
+        {
+          city: 'Taiz',
+          title: '- <span class="text-xl">12</span> Medical Reps - Med.<br/>   Marketing & Promotion',
+          desc: '- <span class="text-xl">7</span> Sales & Distribution'
+        },
+        {
+          city: 'Aden',
+          title: '- <span class="text-xl">11</span> Medical Reps - Med.<br/>   Marketing & Promotion',
+          desc: '- <span  class="text-xl">8</span> Sales & Distribution'
+        },
+        {
+          city: 'Hodeidah',
+          title: '- <span class="text-xl">13</span> Medical Reps - Med.<br/>   Marketing & Promotion',
+          desc: '- <span  class="text-xl">7</span> Sales & Distribution'
+        },
+        {
+          city: 'Ibb',
+          title: '- <span class="text-xl">6</span> Medical Reps - Med.<br/>   Marketing & Promotion',
+          desc: '- <span  class="text-xl">6</span> Sales & Distribution'
+        },
+      ],
       hrCardsData: [
         {
           icon: '/Icons/pie-graph.png',
@@ -402,14 +423,14 @@ export default defineComponent({
       ],
       partners: [
         {
-          icon: '/Icons/user.svg',
+          icon: '/Icons/dongkwang-parm.logo.png',
           title: 'Dongkwang Parm',
-          url: '#'
+          url: 'https://www.dong-wha.co.kr/english/dw_main.asp'
         },
         {
-          icon: '/Icons/user.svg',
+          icon: '/Icons/warafana.png',
           title: 'Warafana Pharmaceutlcas',
-          url: '#'
+          url: 'https://demo2.onetopsolution.com/wara/products/'
         },
       ],
       form: {

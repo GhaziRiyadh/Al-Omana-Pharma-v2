@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="143.301" height="144.169" viewBox="0 0 143.301 144.169">
+  <g id="_bank" data-name=" bank" transform="translate(-313.704 -173.704)">
+    <g id="bank" transform="translate(313.704 173.704)">
+      <path id="Vector" d="M61.918.36l53.738,21.625a6.506,6.506,0,0,1,3.762,5.587V47.516a5.989,5.989,0,0,1-5.971,6.007H5.971A5.989,5.989,0,0,1,0,47.516V27.572a6.506,6.506,0,0,1,3.762-5.587L57.5.36a6.952,6.952,0,0,1,4.418,0Z" transform="translate(11.942 12.555)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-2" data-name="Vector" d="M119.418,24.028H0V6.007A5.989,5.989,0,0,1,5.971,0H113.447a5.989,5.989,0,0,1,5.971,6.007Z" transform="translate(11.942 108.127)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-3" data-name="Vector" d="M0,42.049V0" transform="translate(23.884 66.077)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-4" data-name="Vector" d="M0,42.049V0" transform="translate(47.767 66.077)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-5" data-name="Vector" d="M0,42.049V0" transform="translate(71.651 66.077)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-6" data-name="Vector" d="M0,42.049V0" transform="translate(95.534 66.077)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-7" data-name="Vector" d="M0,42.049V0" transform="translate(119.418 66.077)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-8" data-name="Vector" d="M0,0H131.36" transform="translate(5.971 132.155)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-9" data-name="Vector" d="M17.913,9.011A8.956,8.956,0,1,1,8.956,0a8.984,8.984,0,0,1,8.956,9.011Z" transform="translate(62.694 33.039)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <path id="Vector-10" data-name="Vector" d="M0,0H143.3V144.169H0Z" fill="none"/>
+    </g>
+  </g>
+</svg>

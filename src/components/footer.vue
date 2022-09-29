@@ -13,18 +13,19 @@
       </div>
       <div class="flex items-center justify-center py-6 ">
         <div v-for="(item , i) in socialAccount" :key="i">
-          <a :href="item.url" target="_blank" class="flex">
-            <img :src="item.icon" alt="social-icon" class=" h-6 w-6 mx-2 hover:filter">
-<!--            <p v-text="item.name" class="text-gray-500 font-semibold hover:underline hover:text-primary-500 transition-all duration-300"></p>-->
+          <a :href="item.url" target="_blank" class="flex p-1 border bg-gray-300 mx-2 rounded-full">
+            <img :src="item.icon" alt="social-icon" class=" h-8 w-8 hover:filter object-fill">
+            <!--            <p v-text="item.name" class="text-gray-500 font-semibold hover:underline hover:text-primary-500 transition-all duration-300"></p>-->
           </a>
         </div>
       </div>
       <div class="text-base">
-        <hr class="bg-gray-500"/>
+        <hr class="bg-gray-500" />
         <p class="w-full text-sm text-center py-2 text-gray-800">
           © Copyright <strong>AL-Omana Pharma.</strong> All Rights Reserved<br>
-          Designed by <a target="_blank" class="underline font-semibold text-yellow-700" href="https://temmam.com">Temmam
-          Company</a>
+          Designed by <a target="_blank" class="underline font-semibold text-yellow-700"
+            href="https://temmam.com">Temmam
+            Company</a>
         </p>
       </div>
     </div>
@@ -49,4 +50,5 @@ export default {
 </script>
 
 <style>
+
 </style>

@@ -1,45 +1,26 @@
 <template>
   <index @scroll="getScrollTop" class="min-h-screen overflow-auto snap-y snap-center snap-proximity "
     :social-account="socialAccount">
-    <div class="h-screen flex items-center">
-      <header class=" w-full lg:block flex flex-col items-center justify-center relative">
-        <img data-aos="fade-left" data-aos-duration="1000" alt="" src="/Illustration/header.svg"
-          class=" lg:hidden flex w-full px-4" />
-        <Carousel class="" dir="ltr" :itemsToShow="1" :wrapAround="true" :autoplay="5000">
-          <Slide v-for="slide in imageSlider" :key="slide.id" class=" flex items-center justify-center">
-            <div
-              class="carousel__item lg:h-auto h-full lg:w-1/2 w-full flex items-center justify-center flex-col mt-10 text-left text-xl text-gray-900 z-0">
-              <div data-aos="fade-up" data-aos-duration="1000" class=" lg:px-0 px-8">
-                <div v-text="slide.title"
-                  class="my-2 text-2xl font-semibold flex items-center justify-start text-gray-800"></div>
-                <p class="lg:w-[60vh] w-full flex items-center justify-center text-gray-800" v-text="slide.desc">
-                </p>
-              </div>
-            </div>
-            <div class="lg:w-1/2 w-full hidden lg:flex"></div>
-          </Slide>
-          <template #addons>
-            <!-- <Pagination /> -->
-          </template>
-        </Carousel>
-
-        <div class="absolute hidden lg:flex top-1/2 right-16 transform -translate-y-1/2 w-1/2 h-80">
-          <div class=" h-full w-full rounded-full relative">
-            <img src="/Illustration/header.svg" class="w-full h-full object-cover rounded-full" alt="">
-            <div class="absolute hidden -bottom-6 -left-6 w-44 h-44 bg-primary-800 rounded-full flex">
-              <div class="mx-auto w-full h-full flex flex-col items-center justify-center">
-                <h1 class="text-xl font-semibold text-white">Social Media</h1>
-                <div class="flex items-center justify-evenly mt-1 w-full">
-                  <img src="/Icons/bank.svg" class="w-6 h-6" alt="">
-                  <img src="/Icons/bank.svg" class="w-6 h-6" alt="">
-                  <img src="/Icons/bank.svg" class="w-6 h-6" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </div>
+    <header class="h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-evenly relative">
+      <div data-aos="fade-up" data-aos-duration="1000"
+        class="flex flex-col lg:px-0 px-8 lg:w-1/2 w-full lg:h-full h-1/2">
+        <p class="w-full flex flex-col items-center justify-center h-full">
+          <span>
+            <span class="lg:text-7xl text-4xl text-primary-900">"</span>
+            <span class="lg:text-5xl text-3xl font-semibold text-primary-900"
+              v-html="'We Are Both Glad <br />  to Deal Together'">
+            </span>
+            <span class="lg:text-7xl text-4xl text-primary-900">"</span>
+          </span>
+          <span class="w-full lg:pr-16 pr-10 mt-6 flex items-center justify-end ">
+            <a class="text-sm text-end px-4 py-1 bg-primary-700 hover:bg-primary-900  font-semibold rounded-md text-white"
+              href="#about-us" v-html="'Lets contact'"></a>
+          </span>
+        </p>
+      </div>
+      <img data-aos="fade-up" data-aos-duration="1000" src="/Illustration/header.svg"
+        class="lg:w-1/2 w-full lg:h-full h-1/2 object-contain" alt="">
+    </header>
 
     <!-- about us //need for edit -->
     <Section data-aos="fade-top" id="about-us">
@@ -157,7 +138,7 @@
               <img class="m-auto h-10 w-10" :src="partner.icon" alt="" />
             </div>
             <div class=" col-span-4 flex items-center justify-center w-full">
-              <h1 class="w-full text-center text-goalTile py-1 text-xl uppercase" v-text="partner.title">
+              <h1 class="w-full font-semibold text-goalTile py-1 px-1 text-xl uppercase" v-text="partner.title">
               </h1>
             </div>
           </a>
@@ -180,7 +161,7 @@
         </div>
         <img data-aos="fade-left" src="/Illustration/service.svg" class="lg:w-1/2 w-full px-6" alt="" />
       </div>
-      <div class="w-full flex items-center justify-center mb-14 lg:px-20 px-10 h-14">
+      <div class="w-full flex items-center justify-center mb-14 lg:px-20 px-10">
         <div class="flex h-full flex-col lg:flex-row items-center justify-evenly w-full">
           <server-department-vue class="m-2" v-for="(item , i ) in serviceDepartment" :key="i" :depData="item" />
         </div>
@@ -301,6 +282,15 @@
       <img src="/Icons/arrow-down.svg" class="h-6 w-6 rotate-180" alt="arrow-up" />
     </button>
 
+    <div class="fixed bottom-6 z-50 flex lg:flex-row flex-col left-6">
+      <a href="tel:+967771748598" target="_blank" class="flex p-1 border bg-gray-300 m-2 rounded-full">
+        <img src="/Icons/phone.svg" alt="social-icon" class=" h-8 w-8 hover:filter object-fill">
+      </a>
+      <a href="mailto:info@omanapharma.com" target="_blank" class="flex p-1 border bg-gray-300 m-2 rounded-full">
+        <img src="/Icons/email.svg" alt="social-icon" class=" h-8 w-8 hover:filter object-fill">
+      </a>
+    </div>
+
   </index>
 </template>
 
@@ -368,52 +358,52 @@ export default defineComponent({
         }
       ],
       socialAccount: [
-        {
-          id: 1,
-          name: 'hadaacenter',
-          url: "https://www.facebook.com/hadaacenter",
-          icon: "/Icons/facebook.svg",
-          hoverIcon: '/Icons/twitter-hover.svg'
-        },
-        {
-          id: 2,
-          name: 'hadaacenter',
-          url: "https://www.instagram.com/hadaacenter/",
-          icon: "/Icons/instagram.svg",
-        },
-        {
-          id: 3,
-          name: 'hadaacenter',
-          url: "https://twitter.com/hadaacenter",
-          icon: "/Icons/twitter.svg",
-          hoverIcon: '/Icons/twitter-hover.svg'
-        },
-        {
-          id: 4,
-          name: 'hadaacenter',
-          url: "https://www.linkedin.com/company/hadaacenter",
-          icon: "/Icons/linkedin.svg",
-          hoverIcon: '/Icons/twitter-hover.svg'
-        },
+        // {
+        //   id: 1,
+        //   name: 'hadaacenter',
+        //   url: "https://www.facebook.com/hadaacenter",
+        //   icon: "/Icons/facebook.svg",
+        //   hoverIcon: '/Icons/twitter-hover.svg'
+        // },
+        // {
+        //   id: 2,
+        //   name: 'hadaacenter',
+        //   url: "https://www.instagram.com/hadaacenter/",
+        //   icon: "/Icons/instagram.svg",
+        // },
+        // {
+        //   id: 3,
+        //   name: 'hadaacenter',
+        //   url: "https://twitter.com/hadaacenter",
+        //   icon: "/Icons/twitter.svg",
+        //   hoverIcon: '/Icons/twitter-hover.svg'
+        // },
+        // {
+        //   id: 4,
+        //   name: 'hadaacenter',
+        //   url: "https://www.linkedin.com/company/hadaacenter",
+        //   icon: "/Icons/linkedin.svg",
+        //   hoverIcon: '/Icons/twitter-hover.svg'
+        // },
         {
           id: 4,
           name: '7777777777',
-          url: "tel:",
+          url: "tel:+967771748598",
           icon: "/Icons/phone.svg",
           hoverIcon: '/Icons/twitter-hover.svg'
         },
         {
           id: 4,
-          name: 'gg@gmail.com',
-          url: "mailto:",
+          name: 'info@omanapharma.com',
+          url: "mailto:info@omanapharma.com",
           icon: "/Icons/email.svg",
           hoverIcon: '/Icons/twitter-hover.svg'
         },
         {
           id: 4,
           name: '77777777777',
-          url: "https://wa.me/",
-          icon: "/Icons/whatsapp.svg",
+          url: "tel:+96701571910",
+          icon: "/Icons/telephone.svg",
           hoverIcon: '/Icons/twitter-hover.svg'
         },
       ],

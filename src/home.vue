@@ -14,7 +14,7 @@
           </span>
           <span class="w-full lg:pr-16 pr-10 mt-6 flex items-center justify-end ">
             <a class="text-sm text-end px-4 py-1 bg-primary-700 hover:bg-primary-900  font-semibold rounded-md text-white"
-              href="#about-us" v-html="'Lets contact'"></a>
+              href="#about-us" v-html="'Lets start'"></a>
           </span>
         </p>
       </div>
@@ -247,15 +247,15 @@
             </p>
             <label class="w-full py-2">
               <span class="w-full block text-gray-400 text-sm" v-text="'Title'"></span>
-              <input ref="subject" type="text" class="w-full bg-transparent text-white p-1 border-b-2 ">
+              <input v-model="form.subject" type="text" class="w-full bg-transparent text-white p-1 border-b-2 ">
             </label>
             <label class="w-full py-2">
               <span class="w-full block text-gray-400 text-sm" v-text="'Email'"></span>
-              <input ref="email" type="email" class="w-full bg-transparent text-white p-1 border-b-2 ">
+              <input v-model="form.email" type="email" class="w-full bg-transparent text-white p-1 border-b-2 ">
             </label>
             <label class="w-full py-2">
               <span class="w-full block text-gray-400 text-sm" v-text="'Message'"></span>
-              <textarea ref="message" type="email"
+              <textarea v-model="form.message" type="email"
                 class="w-full bg-gray-900 bg-opacity-20 rounded-t-lg text-sm resize-y max-h-28 h-28 text-white p-1 border-b-2 "></textarea>
             </label>
             <button @click="sendMessage"
@@ -358,33 +358,6 @@ export default defineComponent({
         }
       ],
       socialAccount: [
-        // {
-        //   id: 1,
-        //   name: 'hadaacenter',
-        //   url: "https://www.facebook.com/hadaacenter",
-        //   icon: "/Icons/facebook.svg",
-        //   hoverIcon: '/Icons/twitter-hover.svg'
-        // },
-        // {
-        //   id: 2,
-        //   name: 'hadaacenter',
-        //   url: "https://www.instagram.com/hadaacenter/",
-        //   icon: "/Icons/instagram.svg",
-        // },
-        // {
-        //   id: 3,
-        //   name: 'hadaacenter',
-        //   url: "https://twitter.com/hadaacenter",
-        //   icon: "/Icons/twitter.svg",
-        //   hoverIcon: '/Icons/twitter-hover.svg'
-        // },
-        // {
-        //   id: 4,
-        //   name: 'hadaacenter',
-        //   url: "https://www.linkedin.com/company/hadaacenter",
-        //   icon: "/Icons/linkedin.svg",
-        //   hoverIcon: '/Icons/twitter-hover.svg'
-        // },
         {
           id: 4,
           name: '7777777777',
@@ -438,7 +411,12 @@ export default defineComponent({
           title: 'Warafana Pharmaceutlcas',
           url: '#'
         },
-      ]
+      ],
+      form: {
+        subject: '',
+        message: '',
+        email: '',
+      }
     }
   },
   created() {
@@ -456,28 +434,8 @@ export default defineComponent({
       })
     },
     async sendMessage() {
-      let postData = {
-        email: this.$refs.email.value,
-        subject: this.$refs.subject.value,
-        message: this.$refs.message.data
-      }
-      let res = await fetch('http://127.0.0.1:8000/php/sendMail.php', {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          "x-access-token": "token-value",
-        },
-        body: JSON.stringify(postData),
-      })
-
-      console.log(res)
+      await window.open('mailto:test@example.com?subject=' + this.form.subject + '&body=' + this.form.message);
     }
-    // sliceDesc(text) {
-    //     let end = "";
-    //     for (const item of text.split(/<\/?[a-z]*(\s*\w*)*>|\r\n/))
-    //         if (item != null && item != "") end += item;
-    //     return end.slice(0, 40);
-    // },
   },
 });
 </script>

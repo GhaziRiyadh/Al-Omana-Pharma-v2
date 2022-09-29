@@ -68,7 +68,7 @@
       </div>
     </Section>
 
-    <!-- statistics -->
+    <!-- statistics
     <Section title="Statistics">
       <div class="flex flex-wrap items-center justify-evenly">
         <div class="m-2 w-32 h-32 bg-primary-900 rounded-lg shadow-lg flex flex-col items-center justify-center">
@@ -87,7 +87,7 @@
           <p class="text-white text-sm ">123</p>
         </div>
       </div>
-    </Section>
+    </Section> -->
 
     <!-- values //done -->
     <Section title="Values">
@@ -135,7 +135,7 @@
             v-for="(partner,i) in partners" :key="i"
             class="hover:shadow-lg h-28 my-2 overflow-hidden border hover:border-none bg-white rounded-md w-full grid grid-cols-6 gap-2">
             <div class=" col-span-2 flex h-full rounded-l-lg bg-gray-300">
-              <img class="m-auto h-10 w-10" :src="partner.icon" alt="" />
+              <!-- <img class="m-auto h-10 w-10" :src="partner.icon" alt="" /> -->
             </div>
             <div class=" col-span-4 flex items-center justify-center w-full">
               <h1 class="w-full font-semibold text-goalTile py-1 px-1 text-xl uppercase" v-text="partner.title">

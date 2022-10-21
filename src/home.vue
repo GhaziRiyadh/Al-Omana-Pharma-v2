@@ -124,15 +124,15 @@
       <div class="w-full flex flex-col lg:flex-row items-center justify-center">
         <img data-aos="fade-right" data-aos-duration="3000" src="/Illustration/partner.svg" class="lg:w-1/2 w-full"
           alt="" />
-        <div class="lg:w-1/2 w-full lg:px-14 px-8 flex flex-col items-center justify-evenly">
+        <div class="lg:w-1/2 w-full lg:px-14 px-8 grid grid-cols-2 gap-2">
           <a data-aos="fade-left" data-aos-duration="3000" target="_blank" :href="partner.url"
             v-for="(partner,i) in partners" :key="i"
-            class="hover:shadow-lg h-28 my-2 overflow-hidden border hover:border-none bg-white rounded-md w-full grid grid-cols-6 gap-2">
-            <div class=" col-span-2 flex h-full rounded-l-lg">
+            class="hover:shadow-lg h-28 my-2 overflow-hidden border hover:border-none bg-white rounded-md grid grid-cols-6 gap-2">
+            <div class=" col-span-2 pl-2 flex h-full rounded-l-lg">
               <img class="m-auto h-full object-contain" :src="partner.icon" alt="" />
             </div>
             <div class=" col-span-4 flex items-center justify-center w-full">
-              <h1 class="w-full font-semibold text-goalTile py-1 px-1 text-xl uppercase" v-text="partner.title">
+              <h1 class="w-full font-semibold text-goalTile py-1 px-1 text-base uppercase" v-text="partner.title">
               </h1>
             </div>
           </a>
@@ -288,7 +288,7 @@
   </index>
 </template>
 
-<script lang="ts">
+<script>
 import index from "./index.vue";
 import { Carousel, Slide } from "vue3-carousel";
 import "vue3-carousel/dist/carousel.css";
@@ -424,13 +424,28 @@ export default defineComponent({
       partners: [
         {
           icon: '/Icons/dongkwang-parm.logo.png',
-          title: 'Dongkwang Parm',
+          title: 'Dongkwang Pharm',
           url: 'https://www.dong-wha.co.kr/english/dw_main.asp'
         },
         {
           icon: '/Icons/warafana.png',
           title: 'Warafana Pharmaceutlcas',
           url: 'https://demo2.onetopsolution.com/wara/products/'
+        },
+        {
+          icon: '/Icons/IBE_pharma.png',
+          title: 'IBE Pharma',
+          url: 'http://www.ibepharma.lt/'
+        },
+        {
+          icon: '/Icons/cascaremedies.jfif',
+          title: 'casca remedies',
+          url: 'https://cascaremedies.com/'
+        },
+        {
+          icon: '/Icons/liven_pharmaceuticals.jfif',
+          title: 'liven pharmaceuticals',
+          url: 'https://www.linkedin.com/company/liven-pharmaceuticals?originalSubdomain=pk'
         },
       ],
       form: {
@@ -444,7 +459,7 @@ export default defineComponent({
     AOS.init()
   },
   methods: {
-    getScrollTop(e: any) {
+    getScrollTop(e) {
       this.showButtonScroll = window.screenTop > 230
       console.log(window.screenTop, e.target)
     },

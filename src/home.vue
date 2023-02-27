@@ -221,6 +221,27 @@
       </div>
     </Section>
 
+    <!-- our Categories // done -->
+    <Section title="Our Products" id="our-product">
+      <div class="w-full flex flex-col lg:flex-row items-center justify-center">
+        <img data-aos="fade-right" data-aos-duration="3000" src="/Illustration/product.svg" class="lg:w-1/2 w-full"
+             alt="" />
+        <div class="lg:w-1/2 w-full lg:px-14 px-8 grid grid-cols-2 gap-2">
+          <div data-aos="fade-left" data-aos-duration="3000"
+               v-for="(product,i) in products" :key="i"
+               class="hover:shadow-lg h-28 my-2 overflow-hidden border hover:border-none bg-white rounded-md grid grid-cols-6 gap-2">
+            <div class=" col-span-2 pl-2 flex h-full rounded-l-lg">
+              <img class="m-auto h-full object-contain" :src="product.icon" alt="" />
+            </div>
+            <div class=" col-span-4 flex items-center justify-center w-full">
+              <h1 class="w-full font-semibold text-goalTile py-1 px-1 text-base uppercase" v-text="product.title">
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
     <!-- hr department //done  -->
     <Section title="hr Department">
       <div class="w-full mt-4 flex lg:flex-row flex-col items-center justify-evenly">
@@ -446,6 +467,28 @@ export default defineComponent({
           icon: '/Icons/liven_pharmaceuticals.jfif',
           title: 'liven pharmaceuticals',
           url: 'https://www.linkedin.com/company/liven-pharmaceuticals?originalSubdomain=pk'
+        },
+      ],
+      products: [
+        {
+          icon: '/Icons/dongkwang-parm.logo.png',
+          title: 'Dongkwang Pharm',
+        },
+        {
+          icon: '/Icons/warafana.png',
+          title: 'Warafana Pharmaceutlcas',
+        },
+        {
+          icon: '/Icons/IBE_pharma.png',
+          title: 'IBE Pharma',
+        },
+        {
+          icon: '/Icons/cascaremedies.jfif',
+          title: 'casca remedies',
+        },
+        {
+          icon: '/Icons/liven_pharmaceuticals.jfif',
+          title: 'liven pharmaceuticals',
         },
       ],
       form: {

@@ -84,6 +84,13 @@ export default {
           class: " h-auto "
         },
         {
+          id: 2,
+          title: "Our product",
+          url: "#our-product",
+          showDropDown: false,
+          class: " h-auto "
+        },
+        {
           id: 3,
           title: "Our Service",
           url: "#services",
